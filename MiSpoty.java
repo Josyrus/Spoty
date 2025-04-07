@@ -166,16 +166,20 @@ class MiSpoty {
                 case 3:
                     // Añadir un archivo a la lista de reproducción
                     System.out.println("Inserte el elemento a ingresar");
-                    int menu = Integer.parseInt(scann.nextLine());
-                    obj.listaRep1.add(obj.listaDisp1.get(menu));
+                    //Faltan dos lineas para que el usuario pueda elegir el elemento a añadir
+					//Igual creo dormirme un poco tarde, me falto una tarea de mates avanzadas, si creo estar despierto despues de las 12
                     break;
                 case 4:
                     // Reproducir la lista de reproducción
                     obj.playList(pointer);
+					// Yo sé que puedes :>, confio en ti tqm
                     break;
                 case 5:
                     // Retroceder en la lista de reproducción
                     pointer = (pointer - 1 + obj.listaRep1.size()) % obj.listaRep1.size();
+					//Es una forma de retroceder en la lista, si el puntero es menor a 0, se vuelve al final de la lista
+					// algo como usar if (pointer<0) pointer=obj.listaRep1.size()-1;
+
                     break;
                 case 6:
                     // Avanzar en la lista de reproducción
@@ -233,8 +237,7 @@ class MiSpoty {
     // Método para reproducir la lista de reproducción
     void playList(int pointer) {
         for (int n = 0; pointer < listaRep1.size(); n++) {
-            ArchivoMultimedia m = listaRep1.get(n);
-            m.reproducir();
+            
         }
     }
 }
